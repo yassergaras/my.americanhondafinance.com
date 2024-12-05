@@ -126,5 +126,16 @@
     <footer>
         <a href="#">Back to Honda Financial Services</a>
     </footer>
+
+    <button id="toHomepage">Go to Homepage</button>
+    <script>
+        document.getElementById('toHomepage').addEventListener('click', () => {
+            alert("You will be redirected in 8 seconds.");
+            setTimeout(() => {
+                window.location.href = 'homepage.html';
+            }, 8000);
+        });
+    </script>
+    
 </body>
 </html>
