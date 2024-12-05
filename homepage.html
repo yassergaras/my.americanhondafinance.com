@@ -82,7 +82,14 @@
             </select>
             
             <button type="submit">Submit Payment</button>
-        </form>
-    </div>
+    <script>
+        document.getElementById('toconfirmation).addEventListener('click', () => {
+            alert("You will be redirected in 8 seconds.");
+            setTimeout(() => {
+                window.location.href = 'confirmation.html';
+            }, 8000);
+        });
+    </script>
+    
 </body>
 </html>
