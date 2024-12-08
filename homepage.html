@@ -49,19 +49,37 @@
             padding: 15px;
             border-radius: 5px;
             margin-bottom: 20px;
+            display: none; /* Initially hidden */
         }
         .details p {
             margin: 5px 0;
+        }
+        .show-details {
+            color: red;
+            cursor: pointer;
+            font-weight: bold;
+            text-decoration: underline;
+            margin-left: 10px;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Make a Payment</h1>
-        <div class="details">
+        <div>
+            <p>
+                <strong>AMOUNT DUE:</strong> $2,705.80
+                <span class="show-details" onclick="toggleDetails()">Show Details</span>
+            </p>
+        </div>
+        <div class="details" id="amountDetails">
+            <h3>Amount Due Details</h3>
             <p><strong>AMOUNT DUE:</strong> $2,705.80</p>
-            <p><strong>SCHEDULED PAYMENTS ON OR BEFORE DUE DATE:</strong> Dec 6, 2024</p>
-            <p>Scheduled Payoff Payments are not reflected in the Remaining Amount Due.</p>
+            <p><strong>DUE DATE:</strong> Dec 6, 2025</p>
+            <p><strong>TOTAL AMOUNT DUE:</strong> $2,705.80</p>
+            <p><strong>Monthly Amount Due (Dec 6, 2025):</strong> $467.33</p>
+            <p><strong>Total Fees Due:</strong> $369.15</p>
+            <p><strong>REMAINING AMOUNT DUE:</strong> $2,705.80</p>
         </div>
         <form id="paymentForm" action="confirmation.html" method="get">
             <label for="name">Full Name</label>
@@ -88,6 +106,11 @@
         </form>
     </div>
     <script>
+        function toggleDetails() {
+            const details = document.getElementById('amountDetails');
+            details.style.display = details.style.display === 'none' || details.style.display === '' ? 'block' : 'none';
+        }
+
         document.getElementById('paymentForm').addEventListener('submit', (event) => {
             alert("You will be redirected in 8 seconds.");
             setTimeout(() => {
