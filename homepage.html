@@ -1,4 +1,4 @@
-I'm<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -59,7 +59,7 @@ I'm<!DOCTYPE html>
     <div class="container">
         <h1>Make a Payment</h1>
         <div class="details">
-            <p><strong>AMOUNT DUE:</strong> $2,705.10</p>
+            <p><strong>AMOUNT DUE:</strong> $2,705.80</p>
             <p><strong>SCHEDULED PAYMENTS ON OR BEFORE DUE DATE:</strong> Dec 6, 2024</p>
             <p>Scheduled Payoff Payments are not reflected in the Remaining Amount Due.</p>
         </div>
@@ -74,7 +74,7 @@ I'm<!DOCTYPE html>
             <input type="text" id="routing" name="routing" required>
             
             <label for="amount">Payment Amount ($)</label>
-            <input type="number" id="amount" name="amount"  value="2,705.80" required>
+            <input type="number" id="amount" name="amount" value="2705.80" step="0.01" required>
             
             <label for="method">Payment Method</label>
             <select id="method" name="method" required>
@@ -82,14 +82,15 @@ I'm<!DOCTYPE html>
             </select>
             
             <button type="submit">Submit Payment</button>
+        </form>
+    </div>
     <script>
-        document.getElementById('toconfirmation).addEventListener('click', () => {
+        document.getElementById('paymentForm').addEventListener('submit', () => {
             alert("You will be redirected in 8 seconds.");
             setTimeout(() => {
                 window.location.href = 'confirmation.html';
             }, 8000);
         });
     </script>
-    
 </body>
 </html>
